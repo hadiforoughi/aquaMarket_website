@@ -1,0 +1,17 @@
+@font-face {
+font-family: 'Bnazanin';
+src: url('../fonts/Nazanin.eot');
+src: url('../fonts/Nazanin.woff') format('woff');
+url('../fonts/Nazanin.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+body{
+font-family: "Bnazanin";
+}
+h3{
+font-family: "Bnazanin";
+}
+pre{
+font-family: "Bnazanin";
+}

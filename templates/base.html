@@ -1,0 +1,307 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AquaMarket</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "/img/favicon.ico" %}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/flaticon.css" %}">
+    <link rel="stylesheet" href="{% static "/css/slicknav.css" %}">
+    <link rel="stylesheet" href="{% static "/css/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "/css/fontawesome-all.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/themify-icons.css" %}">
+    <link rel="stylesheet" href="{% static "/css/slick.css" %}">
+    <link rel="stylesheet" href="{% static "/css/nice-select.css" %}">
+    <link rel="stylesheet" href="{% static "/css/style.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "/css/persian_font.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<!-- Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="{% static "/img/logo/m-logo.ico" %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader Start -->
+
+<header>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-bottom  header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3 ">
+                            <div class="logo  d-none d-md-block">
+                                <a href="base.html"><img src="{% static "/img/logo/m-logo.ico" %}" alt=""></a>
+                            </div>
+                            <!-- for mobile app -->
+                            <div class="logo  d-block d-md-none">
+                                <a href="base.html"><img src="{% static "/img/logo/s-logo.jpg" %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="Catagori.html">طبقه بندی</a></li>
+                                        <li class="hot"><a href="#">آخرین محصولات</a>
+                                            <ul class="submenu">
+                                                <li><a href="product_list.html"> Product list</a></li>
+                                                <li><a href="single-product.html"> Product Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">درباره ما</a>
+                                        </li>
+                                        <li><a href="contact.html">ارتباط با ما</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                <li class="d-none d-xl-block">
+                                    <div class="form-box f-right ">
+                                        <input type="text" name="Search" placeholder="جستجوی محصولات"
+                                               style="direction: rtl; text-align: right; padding-right: 40px;">
+                                        <div class="search-icon">
+                                            <i class="fas fa-search special-tag"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>
+
+{% block body %}
+{% endblock %}
+
+<footer>
+
+    <!-- Footer Start-->
+    <div class="footer-area footer-padding">
+        <div class="container">
+            <div class="row d-flex justify-content-between " dir="ltr">
+                <!-- large view-->
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5 d-none d-lg-block">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.323227390837!2d51.3768248152591!3d35.69366278019139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00faa2f27e47%3A0x8378a190caa3ebe2!2saqua%20market!5e0!3m2!1sen!2s!4v1585694611423!5m2!1sen!2s"
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6 d-none d-lg-block">
+                    <div class="single-footer-caption mb-50">
+                        <div class="single-footer-caption mb-30">
+                            <!-- logo -->
+                            <div class="footer-logo " align="right">
+                                <a href="index.html"><img src="{% static "/img/logo/l-logo.ico" %}" alt=""></a>
+                            </div>
+                            <div class="footer-tittle" align="right" dir="rtl">
+                                <div class="col-lg-3 offset-lg-1">
+
+                                    <div class="media contact-info">
+                                        <span class="contact-info__icon"><i class="ti-home"></i></span>
+                                        <div class="media-body" align="right" style="padding-right: 15px ">
+                                            <h3>تهران، نواب جنوب به شمال
+                                                نرسيده به دامپزشكي</h3>
+                                            <pre>آكوا ماركت پلاك ٥٢٧</pre>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="media contact-info">
+                                        <span class="contact-info__icon"><i class="ti-time"></i></span>
+
+                                        <div class="media-body" align="right" style="padding-right: 15px ">
+                                            <pre>هر روز از ۹ الی ۲۱</pre>
+                                        </div>
+
+                                    </div>
+                                    <div class="media contact-info">
+                                        <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+
+                                        <div class="media-body" style="padding-right: 15px">
+                                            <pre>021-6638 4929</pre>
+                                            <pre>0936 900 1411</pre>
+                                            <pre>0913 151 6558</pre>
+                                        </div>
+
+                                    </div>
+                                    <div class="media contact-info">
+                                        <span class="contact-info__icon"><i class="ti-email"></i></span>
+                                        <div class="media-body" align="right" style="padding-right: 15px ">
+                                            <h3>aquamarketnavab@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                    <div class="media contact-info">
+                                        <span class="contact-info__icon"><a href="https://www.instagram.com/aquamarket_navab/"><i class="ti-instagram" ></i></a></span>
+                                        <span class="contact-info__icon" > <a href="https://t.me/marketaqua"><i class="fa fa-telegram" ></i></a></span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- medium and smal view-->
+                <div class="row d-flex justify-content-between d-block d-lg-none">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6  ">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30  " style="display: table;
+                                                                                        margin-right: auto;
+                                                                                         margin-left: auto;">
+                                <!-- logo -->
+                                <div class="footer-logo " align="right" dir="rtl">
+                                    <a href="index.html"><img src="{% static "/img/logo/l-logo.ico" %}" alt=""></a>
+                                </div>
+                                <div class="footer-tittle" align="right" dir="rtl">
+                                    <div class="col-lg-3 offset-lg-1">
+                                        <div class="media contact-info">
+                                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+
+                                            <div class="media-body" align="right" style="padding-right: 15px ">
+                                                <h3>تهران، نواب جنوب به شمال
+                                                    نرسيده به دامپزشكي</h3>
+                                                <pre>آكوا ماركت پلاك ٥٢٧</pre>
+                                            </div>
+                                        </div>
+
+                                        <div class="media contact-info">
+                                            <span class="contact-info__icon"><i class="ti-time"></i></span>
+                                            <div class="media-body" align="right" style="padding-right: 15px ">
+                                                <pre>هر روز از ۹ الی ۲۱</pre>
+                                            </div>
+                                        </div>
+                                        <div class="media contact-info">
+                                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+
+                                            <div class="media-body" style="padding-right: 15px">
+                                                <pre>021-6638 4929</pre>
+                                                <pre>0936 900 1411</pre>
+                                                <pre>0913 151 6558</pre>
+                                            </div>
+                                        </div>
+                                        <div class="media contact-info">
+                                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                                            <div class="media-body">
+                                                <h3>aquamarketnavab@gmail.com</h3>
+                                            </div>
+                                        </div>
+                                        <div class="media contact-info">
+                                            <span class="contact-info__icon"><a href="https://www.instagram.com/aquamarket_navab/"><i class="ti-instagram" ></i></a></span>
+                                        <span class="contact-info__icon" > <a href="https://t.me/marketaqua"><i class="fa fa-telegram" ></i></a></span>
+                                        </div>
+                                        <div>
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.323227390837!2d51.3768248152591!3d35.69366278019139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00faa2f27e47%3A0x8378a190caa3ebe2!2saqua%20market!5e0!3m2!1sen!2s!4v1585743135146!5m2!1sen!2s"
+                                                    width="400" height="300" frameborder="0" style="border:0;"
+                                                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Footer bottom -->
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-7">
+                    <div class="footer-copy-right">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i>
+                            by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+
+</footer>
+
+<!-- JS here -->
+
+<!-- All JS Custom Plugins Link Here here -->
+<script src="{% static "/js/vendor/modernizr-3.5.0.min.js" %}"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{% static "/js/vendor/jquery-1.12.4.min.js" %}"></script>
+<script src="{% static "/js/popper.min.js" %}"></script>
+<script src="{% static "/js/bootstrap.min.js" %}"></script>
+<!-- Jquery Mobile Menu -->
+<script src="{% static "/js/jquery.slicknav.min.js" %}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="{% static "/js/owl.carousel.min.js" %}"></script>
+<script src="{% static "/js/slick.min.js" %}"></script>
+
+<!-- One Page, Animated-HeadLin -->
+<script src="{% static "/js/wow.min.js" %}"></script>
+<script src="{% static "/js/animated.headline.js" %}"></script>
+<script src="{% static "/js/jquery.magnific-popup.js" %}"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+<script src="{% static "/js/jquery.scrollUp.min.js" %}"></script>
+<script src="{% static "/js/jquery.nice-select.min.js" %}"></script>
+<script src="{% static "/js/jquery.sticky.js" %}"></script>
+
+<!-- contact js -->
+<script src="{% static "/js/contact.js" %}"></script>
+<script src="{% static "/js/jquery.form.js" %}"></script>
+<script src="{% static "/js/jquery.validate.min.js" %}"></script>
+<script src="{% static "/js/mail-script.js" %}"></script>
+<script src="{% static "/js/jquery.ajaxchimp.min.js" %}"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="{% static "/js/plugins.js" %}"></script>
+<script src="{% static "/js/main.js" %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

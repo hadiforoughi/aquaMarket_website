@@ -13026,4 +13026,10 @@ input:focus {
   }
 }
 
+.pagination{float: left; width: 100%; margin: 20px 0;}
+.pagination ul{float: left; width: calc(100% - 20px); margin: 0 10px;}
+.pagination ul li{display: inline; list-style: none; float: left; margin-left: 3px; margin-bottom: 3px;}
+.pagination ul li a{text-decoration: none; float: left; padding: 7px 10px; background-color: #2577fd; color:#fff;}
+.menuactive{background-color: #233477 !important}
+.pagination ul li:hover a{background-color: #233477;}
 /*# sourceMappingURL=style.css.map */

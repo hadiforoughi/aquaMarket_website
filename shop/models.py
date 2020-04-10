@@ -5,8 +5,8 @@ from .assist import IntegerRangeField
 # Create your models here.
 
 CATEGORY_CHOICES=(
-    ("Saltwater_fish","ماهی آب شور"),
-    ("Freshwater_fish","ماهی آب شیرین"),
+    ("saltwater_fish","ماهی آب شور"),
+    ("freshwater_fish","ماهی آب شیرین"),
     ("supplies","وسایل و تجهیزات"),
     ("reef","ریف")
 )

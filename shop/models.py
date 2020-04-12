@@ -11,6 +11,11 @@ CATEGORY_CHOICES=(
     ("reef","ریف")
 )
 
+TYPE_CHOICES={
+    ("food","غذا"),
+    ("air_pump","پمپ هوا"),
+}
+
 class Shop(models.Model):
     name=models.CharField(max_length=30)
     email=models.EmailField(blank=True)
@@ -39,7 +44,7 @@ class Product(models.Model):
     orginal_price=models.DecimalField(max_digits=10, decimal_places=2,blank=True)
     final_price=models.DecimalField(max_digits=10,decimal_places=2,blank=True)
     rate=IntegerRangeField(min_value=0, max_value=5,blank=True)
-    type=models.CharField(max_length=100,blank=True)
+    type=models.CharField(max_length=100,blank=True,choices=TYPE_CHOICES)
     has_offer=models.BooleanField()
     exist=models.BooleanField()
 

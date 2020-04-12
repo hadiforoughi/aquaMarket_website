@@ -65,7 +65,14 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="Catagori.html">طبقه بندی</a></li>
+                                        <li><a href="Catagori.html">طبقه بندی</a>
+                                        <ul class="submenu">
+                                                <li><a href="{% url "shop:product_category" 'saltwater_fish' %}" style="text-align: right"> ماهی آب شور</a></li>
+                                                <li><a href="{% url "shop:product_category" 'freshwater_fish' %}" style="text-align: right"> ماهی آب شیرین</a></li>
+                                                <li><a href="{% url "shop:product_category" 'reef' %}" style="text-align: right">ریف</a></li>
+                                                <li><a href="{% url "shop:product_category" 'supplies' %}" style="text-align: right">غذا و تجهیزات</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="hot"><a href="#">آخرین محصولات</a>
                                             <ul class="submenu">
                                                 <li><a href="product_list.html"> Product list</a></li>

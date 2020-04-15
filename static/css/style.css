@@ -13104,4 +13104,20 @@ input:focus {
     color: #fff;
 }
 
+.searchsubmit {
+    cursor: pointer;
+    float: left;
+    background: transparent;
+    border: none;
+    background-size: 16px;
+    background-image: url(../img/icon/search.svg);
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+}
+
+
 /*# sourceMappingURL=style.css.map */

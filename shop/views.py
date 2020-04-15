@@ -45,3 +45,24 @@ class ProductCategory(ListView):
         else:
             context['has_type'] = False
         return context
+
+
+class ProductSearch(ListView):
+    model = Product
+    template_name = "shop/product_search.html"
+    paginate_by = 1
+    def get_queryset(self):
+        query= self.request.GET.get("Search")
+        print("---------------------------------------------------------------")
+        self.queris=self.request.GET
+        print(self.request.get_full_path())
+        print("---------------------------------------------------------------")
+
+        if query:
+            return Product.objects.filter(title__icontains=query)
+        else:
+            return Product.objects.none()
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context=super(ProductSearch,self).get_context_data(**kwargs)
+        context['full_path']=self.request.get_full_path()
+        return context

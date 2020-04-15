@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
 from .assist import IntegerRangeField
+import unidecode
 # Create your models here.
 
 CATEGORY_CHOICES=(
@@ -38,7 +39,7 @@ class Product(models.Model):
     description=models.CharField(max_length=500, blank=True)
     category= models.CharField(max_length=30,choices=CATEGORY_CHOICES)
     created_time=models.DateTimeField(default=timezone.now)
-    slug = models.SlugField(max_length=100, blank=True, null=True)
+    slug = models.SlugField(max_length=100,blank=True, null=True,allow_unicode=True)
     image=models.ImageField(upload_to="shop/image_product",blank=True)
     brand=models.CharField(max_length=100,blank=True)
     orginal_price=models.DecimalField(max_digits=10, decimal_places=2,blank=True)
@@ -48,10 +49,11 @@ class Product(models.Model):
     has_offer=models.BooleanField()
     exist=models.BooleanField()
 
-    def save(self,*args,**kwargs):
+    def save(self, *args, **kwargs):
         if self.slug is None:
-            self.slug=slugify(self.title)
-        super(Product,self).save(*args,**kwargs)
+            string=self.title.replace(" ","_")
+            self.slug = string
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title

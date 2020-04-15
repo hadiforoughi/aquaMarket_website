@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 from .models import Product,TYPE_CHOICES
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -53,10 +53,7 @@ class ProductSearch(ListView):
     paginate_by = 1
     def get_queryset(self):
         query= self.request.GET.get("Search")
-        print("---------------------------------------------------------------")
         self.queris=self.request.GET
-        print(self.request.get_full_path())
-        print("---------------------------------------------------------------")
 
         if query:
             return Product.objects.filter(title__icontains=query)
@@ -66,3 +63,12 @@ class ProductSearch(ListView):
         context=super(ProductSearch,self).get_context_data(**kwargs)
         context['full_path']=self.request.get_full_path()
         return context
+
+class ProductDetails(DetailView):
+    model = Product
+    template_name = "shop/product_detail.html"
+
+    def get_queryset(self):
+        self.slug=self.kwargs['slug']
+        return Product.objects.filter(slug=self.slug)
+

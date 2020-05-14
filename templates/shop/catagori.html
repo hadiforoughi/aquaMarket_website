@@ -27,7 +27,7 @@
                     <div class="product_sidebar">
                         <div class="single_sedebar">
                             <form method="get" action="{% url "shop:product_search" %}" >
-                                <input type="text" name="Search" value="{{ request.Get.q }}" placeholder="جستجوی محصولات"
+                                <input type="text" name="Search" value="{{ request.Get.q }}" placeholder="جستجوی محصول"
                                                style="direction: rtl; text-align: right; padding-right: 50px;">
                                 <i class="ti-search"></i>
                             </form>
@@ -67,26 +67,26 @@
                             {% for product in object_list %}
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_item">
-                                        <img href="{{ product.slug }}" src="{{ product.image.url }}" alt="" class="img-fluid">
+                                        <a href="{% url "shop:product_detail" product.slug  %}"><img href="{{ product.slug }}" src="{{ product.image.url }}" alt="" class="img-fluid"></a>
                                         <div class="product-caption" style="text-align: center">
-                                            <h3 style="font-family: Bnazanin"><a
-                                                    href="{% url "shop:product_detail" product.slug  %}">{{ product.title }}</a></h3>
-                                            {% if offer.exist %}
+                                            <h3 style="font-family: Bnazanin"><a href="{% url "shop:product_detail" product.slug  %}">{{ product.title }}</a></h3>
+                                            {% if product.exist %}
                                                 <div class="price">
                                                     <ul>
-                                                        <li> تومان {{ offer.orginal_price }}</li>
-                                                        {% if offer.has_offer %}
-                                                            <li class="discount"> تومان {{ offer.final_price }}</li>
+                                                        {% if product.has_offer %}
+                                                            <ul class="discount"> تومان {{ product.orginal_price }}</ul>
+                                                            <ul> تومان {{ product.final_price }}</ul>
+                                                        {% else %}
+                                                            <ul> تومان {{ product.orginal_price }}</ul>
                                                         {% endif %}
                                                     </ul>
                                                 </div>
                                             {% else %}
                                                 <div class="price">
                                                     <ul>
-                                                        <li style="color: red">موجود نمی باشد</li>
+                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
                                                     </ul>
                                                 </div>
-
                                             {% endif %}
                                         </div>
                                     </div>

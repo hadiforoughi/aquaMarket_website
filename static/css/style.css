@@ -2445,7 +2445,7 @@ input:focus::-moz-placeholder {
     position: relative;
     border-style: solid;
     border-width: 3px;
-    border-top-color: #ff003c;
+    border-top-color: #1fb7e9;
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -4432,6 +4432,10 @@ input:focus {
 
 /* line 69, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_latest_products.scss */
 .latest-product-area .single-product .product-caption .price ul li.discount {
+    color: #ff003c;
+    text-decoration: line-through;
+}
+ ul ul.discount {
     color: #ff003c;
     text-decoration: line-through;
 }
@@ -13117,6 +13121,10 @@ input:focus {
     background-repeat: no-repeat;
     background-position: center;
     outline: none;
+}
+
+.product_dosent_exist{
+    color: red
 }
 
 

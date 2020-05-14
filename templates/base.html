@@ -53,11 +53,11 @@
                         <!-- Logo -->
                         <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3 ">
                             <div class="logo  d-none d-md-block">
-                                <a href="base.html"><img src="{% static "/img/logo/m-logo.ico" %}" alt=""></a>
+                                <a href="{% url "shop:index" %}"><img src="{% static "/img/logo/m-logo.ico" %}" alt=""></a>
                             </div>
                             <!-- for mobile app -->
                             <div class="logo  d-block d-md-none">
-                                <a href="base.html"><img src="{% static "/img/logo/s-logo.jpg" %}" alt=""></a>
+                                <a href="{% url "shop:index" %}"><img src="{% static "/img/logo/s-logo.jpg" %}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -80,7 +80,7 @@
                                         <li class="hot"><a href="#">آخرین محصولات</a>
                                             <ul class="submenu">
                                                 <li><a href="product_list.html"> Product list</a></li>
-                                                <li><a href="single-product.html"> Product Details</a></li>
+                                                <li><a href="singproductle-product.html"> Product Details</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">درباره ما</a>
@@ -95,7 +95,7 @@
                                 <li class="d-none d-xl-block">
 
                                     <form class="form-box f-right " method="get" action="{% url "shop:product_search" %}" >
-                                        <input type="text" name="Search" value="{{ request.Get.q }}" placeholder="جستجوی محصولات"
+                                        <input type="text" name="Search" value="{{ request.Get.q }}" placeholder="جستجوی محصول"
                                                style="direction: rtl; text-align: right; padding-right: 40px;">
                                        <div class="search-icon">
                                                 <i class="fas fa-search special-tag"></i>

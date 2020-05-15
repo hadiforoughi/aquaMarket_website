@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView,DetailView
-from .models import Product,TYPE_CHOICES
+from .models import Product,TYPE_CHOICES,Customer
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
@@ -16,7 +16,13 @@ def index(request):
     fresh_fish_list = products.filter(category='freshwater_fish').order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
     supplies_list = products.filter(category='supplies').order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
     offer_products_list = products.filter(has_offer=1).order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
-
+    has_email=False
+    if request.method == "POST":
+        email=request.POST.get('email')
+        if email is not None :
+            has_email = True
+            if (not Customer.objects.filter(email=email).exists()):
+                Customer.objects.create(email=email)
     return render(request,
                   'shop/index.html',
                   {'reef_list': reef_list,
@@ -24,12 +30,13 @@ def index(request):
                    'fresh_fish_list': fresh_fish_list,
                    'supplies_list': supplies_list,
                    'offer_products_list': offer_products_list,
+                   'has_email':has_email
                    })
 
 class ProductCategory(ListView):
     model = Product
     template_name = 'shop/catagori.html'
-    paginate_by = 2
+    paginate_by = 1
     def get_queryset(self):
         self.category=self.kwargs['category']
         return self.model.objects.filter(category=self.category)
@@ -71,4 +78,5 @@ class ProductDetails(DetailView):
     def get_queryset(self):
         self.slug=self.kwargs['slug']
         return Product.objects.filter(slug=self.slug)
+
 

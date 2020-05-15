@@ -57,3 +57,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+class Customer(models.Model):
+    email=models.EmailField()
+
+    def __str__(self):
+        return self.email

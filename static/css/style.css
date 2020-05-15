@@ -2699,7 +2699,10 @@ input:focus::-moz-placeholder {
     padding-top: 200px;
     padding-bottom: 170px;
 }
-
+.section-padding40 {
+    padding-top: 200px;
+    padding-bottom: 170px;
+}
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     /* line 778, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
     .section-padding30 {

@@ -44,7 +44,7 @@ class Product(models.Model):
     brand=models.CharField(max_length=100,blank=True)
     orginal_price=models.DecimalField(max_digits=10, decimal_places=2,blank=True)
     final_price=models.DecimalField(max_digits=10,decimal_places=2,blank=True)
-    rate=IntegerRangeField(min_value=0, max_value=5,blank=True)
+    rate=IntegerRangeField(min_value=0, max_value=5,blank=True,null=True)
     type=models.CharField(max_length=100,blank=True,choices=TYPE_CHOICES)
     has_offer=models.BooleanField()
     exist=models.BooleanField()
@@ -63,3 +63,7 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.email
+
+class Slider(models.Model):
+    image=models.ImageField(upload_to="shop/image_slider")
+    url=models.TextField(blank=True,max_length=50)

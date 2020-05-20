@@ -2699,10 +2699,12 @@ input:focus::-moz-placeholder {
     padding-top: 200px;
     padding-bottom: 170px;
 }
+
 .section-padding40 {
     padding-top: 200px;
     padding-bottom: 170px;
 }
+
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     /* line 778, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
     .section-padding30 {
@@ -4438,7 +4440,8 @@ input:focus {
     color: #ff003c;
     text-decoration: line-through;
 }
- ul ul.discount {
+
+ul ul.discount {
     color: #ff003c;
     text-decoration: line-through;
 }
@@ -4878,6 +4881,7 @@ input:focus {
     border-radius: 30px;
 }
 
+
 @media (max-width: 767px) {
     /* line 224, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_best-product.scss */
     .latest-wrapper .latest-area .latest-subscribe form input {
@@ -5023,6 +5027,10 @@ input:focus {
 /* line 2, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_footer.scss */
 .footer-area .footer-logo {
     margin-bottom: 40px;
+}
+
+.footer-area{
+    clear: both;
 }
 
 /* line 6, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_footer.scss */
@@ -8969,7 +8977,10 @@ del {
 /* line 150, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_single_product.scss */
 .product_image_area .single_product_text p {
     margin-top: 50px;
-    color: #707070;
+    color: black;
+    font-size: x-large;
+    direction: rtl;
+    text-justify: auto;
 }
 
 @media (max-width: 991px) {
@@ -10257,11 +10268,13 @@ input:focus {
     text-align: center;
     max-width: 30px;
     background-color: transparent;
+    font-size: x-large;
 }
 
 /* line 524, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
 .price_value {
     align-items: center;
+    font-size: x-large;
 }
 
 /* line 528, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
@@ -13126,9 +13139,79 @@ input:focus {
     outline: none;
 }
 
-.product_dosent_exist{
+.product_dosent_exist {
     color: red
 }
 
+.related {
+
+    float: left;
+    width: calc(100% - 20px);
+    margin: 0 0 20px 0;
+   background-color: #d4e4ff;
+    padding: 10px;
+}
+
+.related h3 {
+    float: left;
+    direction: rtl;
+    alignment: right;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: xx-large;
+    width: calc(100% - 20px)
+}
+
+.relatemovie {
+    float: left;
+    width: calc(16.6% - 15px);
+    margin: 0 5px 10px 10px;
+    position: relative;
+}
+
+.relatemovie img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.relatedname {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background-color: rgba(95, 180, 255, 0.6);
+    padding: 5px 10px;
+    line-height: 1.4;
+    direction: rtl;
+    alignment: right;
+    font-size: xx-large;
+}
+
+.relatemovie a {
+    color: black;
+    alignment: right;
+    direction: rtl;
+    text-decoration: none;
+}
+
+@media all and (max-width: 786px) {
+    .mov {
+        width: calc(25% - 20px);
+    }
+
+    .homeslider > .swiper-container > .swiper-wrapper > .swiper-slide > .caption > .captioninside {
+        top: 50px;
+        left: 10px;
+        max-width: 50%;
+    }
+
+    .relatemovie {
+        float: left;
+        width: calc(33.3% - 15px);
+        margin: 0 5px 10px 10px;
+        position: relative;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */

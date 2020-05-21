@@ -141,9 +141,9 @@
                 <div class="col-lg-8">
                     <div class="single_product_text text-center">
                         <h3>{{ object.title }}</h3>
-                        <p>
+                        <pre>
                             {{ object.description }}
-                        </p>
+                        </pre>
                         {% if object.exist %}
                             <div class="price">
                                 <ul>
@@ -197,8 +197,10 @@
     {#					</div>#}
     {#				</div>#}
     {#			</section>#}
-        <section class="related" dir="rtl">
-            <h3 align="right">محصولات مرتبط</h3>
+
+
+        <section class="related d-none d-sm-block" dir="rtl" style="color: red" >
+            <h3 align="right" >محصولات مرتبط</h3>
             {% for related in related_products %}
                 <div align="right" class="relatemovie">
                     <a href="{% url "shop:product_detail" related.slug %}"><img src="{{ related.image.url }}"></a>
@@ -206,8 +208,9 @@
                             class="relatedname align-right">{{ related.title }}</span></a>
                 </div>
             {% endfor %}
-
         </section>
+
+
 
 {#    <section class="subscribe_part section_padding">#}
 {#        <div class="container">#}

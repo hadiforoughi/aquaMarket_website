@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView,DetailView
-from .models import Product,TYPE_CHOICES,Customer,Slider
+from .models import Product,TYPE_CHOICES_VAL,Customer,Slider
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
@@ -40,23 +40,23 @@ def index(request):
 
 class ProductCategory(ListView):
     model = Product
-    template_name = 'shop/catagori.html'
+    template_name = 'shop/category.html'
     paginate_by = 1
     def get_queryset(self):
         self.category=self.kwargs['category']
-        return self.model.objects.filter(category=self.category)
+        category_product=self.model.objects.filter(category=self.category)
+        if len(category_product)==0:
+            return self.model.objects.filter(type=self.category)
+        else:return category_product
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super(ProductCategory,self).get_context_data(**kwargs)
         context['product_category'] = self.category
-        if self.category == "supplies":
+        if self.category == "supplies" or self.category in TYPE_CHOICES_VAL:
             context['has_type'] = True
-            types=[]
-            for item in TYPE_CHOICES:
-                types.append(item[1])
-            context['types']= types
         else:
             context['has_type'] = False
         return context
+
 
 
 class ProductSearch(ListView):

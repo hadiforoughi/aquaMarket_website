@@ -5021,6 +5021,7 @@ ul ul.discount {
     /* line 313, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_best-product.scss */
     .gallery-wrapper .gallery-area .gallery-items {
         width: 50%;
+        padding: 5px;
     }
 }
 

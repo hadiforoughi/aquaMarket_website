@@ -36,7 +36,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="{% static "/img/logo/m-logo.ico" %}" alt="">
+                <img src="{% static "/img/logo/m-logo.jpg" %}" alt="">
             </div>
         </div>
     </div>
@@ -52,12 +52,17 @@
                     <div class="row align-items-center">
                         <!-- Logo -->
                         <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3 ">
-                            <div class="logo  d-none d-md-block">
-                                <a style="padding-left: 10px" href="{% url "shop:index" %}"><img src="{% static "/img/logo/m-logo.ico" %}" alt=""></a>
+                            <!-- for large view  -->
+                            <div class="logo  d-none d-lg-block d-xl-none">
+                                <a style="padding-left: 10px" href="{% url "shop:index" %}"><img src="{% static "/img/logo/l-logo.jpg" %}" alt=""></a>
                             </div>
-                            <!-- for mobile app -->
+                            <!-- for medium view -->
+                            <div class="logo  d-none d-md-block">
+                                <a style="padding-left: 10px" href="{% url "shop:index" %}"><img src="{% static "/img/logo/m-logo.jpg" %}" alt=""></a>
+                            </div>
+                            <!-- for small view -->
                             <div class="logo  d-block d-md-none">
-                                <a style="padding-left: 10px" href="{% url "shop:index" %}"><img src="{% static "/img/logo/s-logo.jpg" %}" alt=""></a>
+                                <a style="padding-left: 5px" href="{% url "shop:index" %}"><img src="{% static "/img/logo/s-logo.jpg" %}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -130,10 +135,6 @@
                 <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6 d-none d-lg-block">
                     <div class="single-footer-caption mb-50">
                         <div class="single-footer-caption mb-30">
-                            <!-- logo -->
-{#                            <div class="footer-logo " align="right">#}
-{#                                <a href="shop/index.html"><img src="{% static "/img/logo/l-logo.ico" %}" alt=""></a>#}
-{#                            </div>#}
                             <div class="footer-tittle" align="right" dir="rtl">
                                 <div class="col-lg-3 offset-lg-1">
 

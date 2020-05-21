@@ -16,6 +16,7 @@ TYPE_CHOICES={
     ("food","غذا"),
     ("air_pump","پمپ هوا"),
 }
+TYPE_CHOICES_VAL=["food","air_pump"]
 
 class Shop(models.Model):
     name=models.CharField(max_length=30)

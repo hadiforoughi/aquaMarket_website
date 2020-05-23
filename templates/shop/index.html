@@ -13,7 +13,8 @@
                         <div class="container">
                             <div class="row d-flex align-items-center justify-content-between">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  align-content-center">
-                                    <div id="carouselExampleCaptions" class="carousel slide align-self-center" data-ride="carousel" >
+                                    <div id="carouselExampleCaptions" class="carousel slide align-self-center"
+                                         data-ride="carousel">
                                         <ol class="carousel-indicators">
                                             <li data-target="#carouselExampleCaptions" data-slide-to="0"
                                                 class="active"></li>
@@ -68,7 +69,6 @@
             <!-- Swiper -->
 
 
-
         </header>
 
 
@@ -87,9 +87,12 @@
                     <div class="col-xl-3 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img">
-                                <img src="{% static "/img/categori/cat1.jpg" %}" alt="">
-                                <div class="category-caption">
-                                    <span class="best"><a href="#">غذا و تجهیزات</a></span>
+                                <img src="{% static "/img/categori/category_reef.jpg" %}" alt="">
+                                <div class="category-caption d-xl-none">
+                                    <span class="best"><a href="#">ریف</a></span>
+                                </div>
+                                <div class="category-caption d-none d-xl-block">
+                                    <span class="best_large"><a href="#">ریف</a></span>
                                 </div>
                             </div>
                         </div>
@@ -97,19 +100,12 @@
                     <div class="col-xl-3 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img text-center">
-                                <img src="{% static "/img/categori/cat2.jpg" %}" alt="">
-                                <div class="category-caption">
+                                <img src="{% static "/img/categori/category_saltfish.jpg" %}" alt="">
+                                <div class="category-caption d-xl-none">
                                     <span class="best"><a href="#">ماهی آب شور</a></span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="single-category mb-30">
-                            <div class="category-img">
-                                <img src="{% static "/img/categori/cat3.jpg" %}" alt="">
-                                <div class="category-caption">
-                                    <span class="best"><a href="#">ماهی آب شیرین</a></span>
+                                <div class="category-caption d-none d-xl-block">
+                                    <span class="best_large"><a href="#">ماهی آب شور</a></span>
                                 </div>
                             </div>
                         </div>
@@ -117,9 +113,25 @@
                     <div class="col-xl-3 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img">
-                                <img src="{% static "/img/categori/cat3.jpg" %}" alt="">
-                                <div class="category-caption">
-                                    <span class="best"><a href="#">ریف</a></span>
+                                <img src="{% static "/img/categori/category_freshfish.jpg" %}" alt="">
+                                <div class="category-caption d-xl-none">
+                                    <span class="best"><a href="#">ماهی آب شیرین</a></span>
+                                </div>
+                                <div class="category-caption d-none d-xl-block">
+                                    <span class="best_large"><a href="#">ماهی آب شیرین</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="single-category mb-30">
+                            <div class="category-img">
+                                <img src="{% static "/img/categori/category_supplie.jpg" %}" alt="">
+                                <div class="category-caption d-xl-none">
+                                    <span class="best"><a href="#">غذا و تجهیزات</a></span>
+                                </div>
+                                <div class="category-caption d-none d-xl-block">
+                                    <span class="best_large"><a href="#">غذا و تجهیزات</a></span>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +394,7 @@
                         <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
                             <div class="latest-caption">
                                 <h2 align="center" style="color: #2577fd">برای دریافت آخرین تخفیفات</h2>
-                            <h2 align="center" style="color:#2577fd">ایمیل خود را وارد کنید</h2>
+                                <h2 align="center" style="color:#2577fd">ایمیل خود را وارد کنید</h2>
                                 {% if has_email %}
                                     <p>ایمیل شما با موفقیت ثبت شد</p>
                                 {% endif %}
@@ -392,7 +404,8 @@
                             <div class="latest-subscribe">
                                 <form method="post" action="{% url "shop:index" %}">
                                     {% csrf_token %}
-                                    <input style="direction: rtl; text-align: right; padding-right: 130px " type="email" name="email" value="{{ request.Get.q }}"
+                                    <input style="direction: rtl; text-align: right; padding-right: 130px " type="email"
+                                           name="email" value="{{ request.Get.q }}"
                                            placeholder="ایمیل خود را وارد کنید">
                                     <button style="font-size: large">ارسال</button>
                                 </form>
@@ -401,9 +414,9 @@
                     </div>
                 </div>
                 <!-- man Shape -->
-{#                <div class="man-shape">#}
-{#                    <img src="{% static "/img/collection/latest-man.png" %}" alt="">#}
-{#                </div>#}
+                {#                <div class="man-shape">#}
+                {#                    <img src="{% static "/img/collection/latest-man.png" %}" alt="">#}
+                {#                </div>#}
             </div>
         </div>
         <!-- Latest Offers End -->

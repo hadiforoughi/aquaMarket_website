@@ -69,24 +69,24 @@
                                         <a href="{% url "shop:product_detail" product.slug  %}"><img href="{{ product.slug }}" src="{{ product.image.url }}" alt="" class="img-fluid"></a>
                                         <div class="product-caption" style="text-align: center">
                                             <h3 style="font-family: Bnazanin"><a href="{% url "shop:product_detail" product.slug  %}">{{ product.title }}</a></h3>
-                                            {% if product.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        {% if product.has_offer %}
-                                                            <ul class="discount"> تومان {{ product.orginal_price }}</ul>
-                                                            <ul> تومان {{ product.final_price }}</ul>
-                                                        {% else %}
-                                                            <ul> تومان {{ product.orginal_price }}</ul>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-                                            {% endif %}
+{#                                            {% if product.exist %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        {% if product.has_offer %}#}
+{#                                                            <ul class="discount"> تومان {{ product.orginal_price }}</ul>#}
+{#                                                            <ul> تومان {{ product.final_price }}</ul>#}
+{#                                                        {% else %}#}
+{#                                                            <ul> تومان {{ product.orginal_price }}</ul>#}
+{#                                                        {% endif %}#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% else %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% endif %}#}
                                         </div>
                                     </div>
                                 </div>
@@ -98,27 +98,7 @@
 
                         <div class="load_more_btn ">
                                 {% if is_paginated %}
-                                    <nav class="pagination"  >
-                                        <ul >
-                                            {% if page_obj.has_previous %}
-                                                <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
-                                            {% else %}
-                                                <li class="disabled"></li>
-                                            {% endif %}
-                                            {% for pages in page_obj.paginator.page_range %}
-                                                {% if page_obj.number == pages %}
-                                                    <li class="menuactive"><a href="#" style="color: white">{{ pages }}</a></li>
-                                                {% else %}
-                                                    <li><a href="?page={{ pages }}">{{ pages }}</a></li>
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% if page_obj.has_next %}
-                                                <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
-                                            {% else %}
-                                                <li class="disabled"></li>
-                                            {% endif %}
-                                        </ul>
-                                    </nav>
+                                    {% include "_pagination.html" %}
                                 {% endif %}
                         </div>
                     </div>

@@ -60,10 +60,10 @@ class Product(models.Model):
         return self.title
 
 class Customer(models.Model):
-    email=models.EmailField()
+    phone = models.CharField(max_length=11,default=00000000000)
 
     def __str__(self):
-        return self.email
+        return self.phone
 
 class Slider(models.Model):
     image=models.ImageField(upload_to="shop/image_slider")

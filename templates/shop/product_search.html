@@ -28,27 +28,26 @@
                             {% for product in object_list %}
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="{{ product.image.url }}" alt="" class="img-fluid">
+                                        <a href="{% url "shop:product_detail" product.slug  %}"><img src="{{ product.image.url }}" alt="" class="img-fluid"></a>
                                         <div class="product-caption" style="text-align: center">
-                                            <h3 style="font-family: Bnazanin"><a
-                                                    href="product_detail.html">{{ product.title }}</a></h3>
-                                            {% if offer.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li> تومان {{ offer.orginal_price }}</li>
-                                                        {% if offer.has_offer %}
-                                                            <li class="discount"> تومان {{ offer.final_price }}</li>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li style="color: red">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-
-                                            {% endif %}
+                                            <h3 style="font-family: Bnazanin"><a  href="{% url "shop:product_detail" product.slug  %}">{{ product.title }}</a></h3>
+                                            {#                                            {% if offer.exist %}#}
+                                            {#                                                <div class="price">#}
+                                            {#                                                    <ul>#}
+                                            {#                                                        <li> تومان {{ offer.orginal_price }}</li>#}
+                                            {#                                                        {% if offer.has_offer %}#}
+                                            {#                                                            <li class="discount"> تومان {{ offer.final_price }}</li>#}
+                                            {#                                                        {% endif %}#}
+                                            {#                                                    </ul>#}
+                                            {#                                                </div>#}
+                                            {#                                            {% else %}#}
+                                            {#                                                <div class="price">#}
+                                            {#                                                    <ul>#}
+                                            {#                                                        <li style="color: red">موجود نمی باشد</li>#}
+                                            {#                                                    </ul>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                            {% endif %}#}
                                         </div>
                                     </div>
                                 </div>
@@ -58,30 +57,38 @@
                         {#                            <a href="#" class="btn_3">Load More</a>#}
                         {#                        </div>#}
 
+
                         <div class="load_more_btn ">
-                                {% if is_paginated %}
-                                    <nav class="pagination"  >
-                                        <ul >
-                                            {% if page_obj.has_previous %}
-                                                <li><a href="{{ full_path }}&page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                            {% if is_paginated %}
+                                <nav class="pagination justify-content-center">
+                                    <ul class="">
+                                        {% if page_obj.has_previous %}
+                                            <li>
+                                                <a href="{{ full_path }}&page={{ page_obj.previous_page_number }}">قبلی</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="disabled"></li>
+                                        {% endif %}
+                                        {% for pages in  page_obj.paginator.page_range %}
+                                            {% if pages <= page_obj.number|add:5 and pages >= page_obj.number|add:-5 %}
+                                               {% if page_obj.number == pages %}
+                                                <li class="menuactive"><a href="#" style="color: white">{{ pages }}</a>
+                                                </li>
                                             {% else %}
-                                                <li class="disabled"></li>
+                                                <li><a href="{{ full_path }}&page={{ pages }}">{{ pages }}</a></li>
                                             {% endif %}
-                                            {% for pages in page_obj.paginator.page_range %}
-                                                {% if page_obj.number == pages %}
-                                                    <li class="menuactive"><a href="#" style="color: white">{{ pages }}</a></li>
-                                                {% else %}
-                                                    <li><a href="{{ full_path }}&page={{ pages }}">{{ pages }}</a></li>
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% if page_obj.has_next %}
-                                                <li><a href="{{ full_path }}&page={{ page_obj.next_page_number }}">بعدی</a></li>
-                                            {% else %}
-                                                <li class="disabled"></li>
                                             {% endif %}
-                                        </ul>
-                                    </nav>
-                                {% endif %}
+                                        {% endfor %}
+
+                                        {% if page_obj.has_next %}
+                                            <li><a href="{{ full_path }}&page={{ page_obj.next_page_number }}">بعدی</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="disabled"></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -2,12 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView,DetailView
 from .models import Product,TYPE_CHOICES_VAL,Customer,Slider
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
+import re
 # Create your views here.
 
 INDEX_LASTPRODUCT_NUMBER = 2
 NUMBER_OF_RELATED_PRODUCT=3
+
+
+
+def phone_Valid(s):
+    Pattern = re.compile("(0/91)?[0-9]{11}")
+    return Pattern.match(s)
 
 
 def index(request):
@@ -19,13 +24,15 @@ def index(request):
     offer_products_list = products.filter(has_offer=1).order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
     slider=Slider.objects.all()
     slider_size=str(len(slider))
-    has_email=False
+    has_phone=False
     if request.method == "POST":
-        email=request.POST.get('email')
-        if email is not None :
-            has_email = True
-            if (not Customer.objects.filter(email=email).exists()):
-                Customer.objects.create(email=email)
+        phone=request.POST.get('phone')
+        if phone is not None :
+            if (len(phone) > 6 and len(phone) < 12 and phone_Valid(phone)):
+                # has_phone = True
+                if (not Customer.objects.filter(phone=phone).exists()):
+                    Customer.objects.create(phone=phone)
+
     return render(request,
                   'shop/index.html',
                   {'reef_list': reef_list,
@@ -33,7 +40,7 @@ def index(request):
                    'fresh_fish_list': fresh_fish_list,
                    'supplies_list': supplies_list,
                    'offer_products_list': offer_products_list,
-                   'has_email':has_email,
+                   # 'has_phone':has_phone,
                    'sliders':slider,
                    'slider_size':slider_size
                    })
@@ -73,7 +80,8 @@ class ProductSearch(ListView):
             return Product.objects.none()
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super(ProductSearch,self).get_context_data(**kwargs)
-        context['full_path']=self.request.get_full_path()
+        s=str(self.request.get_full_path())
+        context['full_path']=self.request.get_full_path()[0:s.index("&page")]
         return context
 
 class ProductDetails(DetailView):
@@ -91,7 +99,6 @@ class ProductDetails(DetailView):
         related_list = list(related_products)
         if self.get_object() in related_products :
             related_list.remove(self.get_object())
-
         context['related_products'] =related_list
         return context
 

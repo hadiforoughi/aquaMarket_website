@@ -83,8 +83,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6">
+                <div class="row" >
+                    <div class="col-xl-3 col-lg-6 ">
                         <div class="single-category mb-30">
                             <div class="category-img">
                                 <img src="{% static "/img/categori/category_reef.jpg" %}" alt="">
@@ -166,9 +166,9 @@
                                        href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ماهی
                                         آب شیرین</a>
 
-                                    <a class="nav-item nav-link" id="nav-contact2-tab" data-toggle="tab"
-                                       href="#nav-offer" role="tab" aria-controls="nav-contact" aria-selected="false">تخفیف
-                                        دارها</a>
+{#                                    <a class="nav-item nav-link" id="nav-contact2-tab" data-toggle="tab"#}
+{#                                       href="#nav-offer" role="tab" aria-controls="nav-contact" aria-selected="false">تخفیف#}
+{#                                        دارها</a>#}
 
                                     <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last"
                                        role="tab" aria-controls="nav-contact" aria-selected="false">غذا و تجهیزات</a>
@@ -192,26 +192,26 @@
                                                     src="{{ salt.image.url }}" alt=""></a>
                                         </div>
                                         <div class="product-caption">
-                                            <h4><a href="{% url "shop:product_detail" salt.slug %}">{{ salt.title }}</a>
+                                            <h4 ><a style="font-size: x-large" href="{% url "shop:product_detail" salt.slug %}">{{ salt.title }}</a>
                                             </h4>
-                                            {% if salt.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        {% if salt.has_offer %}
-                                                            <ul class="discount"> تومان {{ salt.orginal_price }}</ul>
-                                                            <ul> تومان {{ salt.final_price }}</ul>
-                                                        {% else %}
-                                                            <ul> تومان {{ salt.orginal_price }}</ul>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-                                            {% endif %}
+{#                                            {% if salt.exist %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        {% if salt.has_offer %}#}
+{#                                                            <ul class="discount"> تومان {{ salt.orginal_price }}</ul>#}
+{#                                                            <ul> تومان {{ salt.final_price }}</ul>#}
+{#                                                        {% else %}#}
+{#                                                            <ul> تومان {{ salt.orginal_price }}</ul>#}
+{#                                                        {% endif %}#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% else %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% endif %}#}
                                         </div>
                                     </div>
                                 </div>
@@ -230,26 +230,26 @@
                                                     src="{{ reef.image.url }}" alt=""></a>
                                         </div>
                                         <div class="product-caption">
-                                            <h4><a href="{% url "shop:product_detail" reef.slug %}">{{ reef.title }}</a>
+                                            <h4><a style="font-size: x-large" href="{% url "shop:product_detail" reef.slug %}">{{ reef.title }}</a>
                                             </h4>
-                                            {% if reef.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        {% if reef.has_offer %}
-                                                            <ul class="discount"> تومان {{ reef.orginal_price }}</ul>
-                                                            <ul> تومان {{ reef.final_price }}</ul>
-                                                        {% else %}
-                                                            <ul> تومان {{ reef.orginal_price }}</ul>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-                                            {% endif %}
+{#                                            {% if reef.exist %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        {% if reef.has_offer %}#}
+{#                                                            <ul class="discount"> تومان {{ reef.orginal_price }}</ul>#}
+{#                                                            <ul> تومان {{ reef.final_price }}</ul>#}
+{#                                                        {% else %}#}
+{#                                                            <ul> تومان {{ reef.orginal_price }}</ul>#}
+{#                                                        {% endif %}#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% else %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% endif %}#}
                                         </div>
                                     </div>
                                 </div>
@@ -268,26 +268,26 @@
                                         </div>
                                         <div class="product-caption">
                                             <h4>
-                                                <a href="{% url "shop:product_detail" fresh.slug %}">{{ fresh.title }}</a>
+                                                <a style="font-size: x-large" href="{% url "shop:product_detail" fresh.slug %}">{{ fresh.title }}</a>
                                             </h4>
-                                            {% if fresh.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        {% if fresh.has_offer %}
-                                                            <ul class="discount"> تومان {{ fresh.orginal_price }}</ul>
-                                                            <ul> تومان {{ fresh.final_price }}</ul>
-                                                        {% else %}
-                                                            <ul> تومان {{ fresh.orginal_price }}</ul>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-                                            {% endif %}
+{#                                            {% if fresh.exist %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        {% if fresh.has_offer %}#}
+{#                                                            <ul class="discount"> تومان {{ fresh.orginal_price }}</ul>#}
+{#                                                            <ul> تومان {{ fresh.final_price }}</ul>#}
+{#                                                        {% else %}#}
+{#                                                            <ul> تومان {{ fresh.orginal_price }}</ul>#}
+{#                                                        {% endif %}#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% else %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% endif %}#}
 
                                         </div>
                                     </div>
@@ -296,47 +296,47 @@
                         </div>
                     </div>
 
-                    <!-- Card offer -->
-                    <div class="tab-pane fade" id="nav-offer" role="tabpanel" aria-labelledby="nav-offer-tab">
-                        <div class="row">
-                            {% for offer in offer_products_list %}
-                                {% if offer.exist %}
-                                    <div class="col-xl-4 col-lg-4 col-md-6">
-                                        <div class="single-product mb-60">
-                                            <div class="product-img">
-                                                <a href="{% url "shop:product_detail" offer.slug %}"><img
-                                                        src="{{ offer.image.url }}" alt=""></a>
-                                            </div>
-                                            <div class="product-caption">
-                                                <h4>
-                                                    <a href="{% url "shop:product_detail" offer.slug %}">{{ offer.title }}</a>
-                                                </h4>
-                                                {% if offer.exist %}
-                                                    <div class="price">
-                                                        <ul>
-                                                            {% if offer.has_offer %}
-                                                                <ul class="discount">
-                                                                    تومان {{ offer.orginal_price }}</ul>
-                                                                <ul> تومان {{ offer.final_price }}</ul>
-                                                            {% else %}
-                                                                <ul> تومان {{ offer.orginal_price }}</ul>
-                                                            {% endif %}
-                                                        </ul>
-                                                    </div>
-                                                {% else %}
-                                                    <div class="price">
-                                                        <ul>
-                                                            <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                        </ul>
-                                                    </div>
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
+{#                    <!-- Card offer -->#}
+{#                    <div class="tab-pane fade" id="nav-offer" role="tabpanel" aria-labelledby="nav-offer-tab">#}
+{#                        <div class="row">#}
+{#                            {% for offer in offer_products_list %}#}
+{#                                {% if offer.exist %}#}
+{#                                    <div class="col-xl-4 col-lg-4 col-md-6">#}
+{#                                        <div class="single-product mb-60">#}
+{#                                            <div class="product-img">#}
+{#                                                <a href="{% url "shop:product_detail" offer.slug %}"><img#}
+{#                                                        src="{{ offer.image.url }}" alt=""></a>#}
+{#                                            </div>#}
+{#                                            <div class="product-caption">#}
+{#                                                <h4>#}
+{#                                                    <a href="{% url "shop:product_detail" offer.slug %}">{{ offer.title }}</a>#}
+{#                                                </h4>#}
+{#                                                {% if offer.exist %}#}
+{#                                                    <div class="price">#}
+{#                                                        <ul>#}
+{#                                                            {% if offer.has_offer %}#}
+{#                                                                <ul class="discount">#}
+{#                                                                    تومان {{ offer.orginal_price }}</ul>#}
+{#                                                                <ul> تومان {{ offer.final_price }}</ul>#}
+{#                                                            {% else %}#}
+{#                                                                <ul> تومان {{ offer.orginal_price }}</ul>#}
+{#                                                            {% endif %}#}
+{#                                                        </ul>#}
+{#                                                    </div>#}
+{#                                                {% else %}#}
+{#                                                    <div class="price">#}
+{#                                                        <ul>#}
+{#                                                            <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                        </ul>#}
+{#                                                    </div>#}
+{#                                                {% endif %}#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                {% endif %}#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
 
                     <!-- card supplie -->
                     <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
@@ -350,26 +350,26 @@
                                         </div>
                                         <div class="product-caption">
                                             <h4>
-                                                <a href="{% url "shop:product_detail" supplie.slug %}">{{ supplie.title }}</a>
+                                                <a style="font-size: x-large" href="{% url "shop:product_detail" supplie.slug %}">{{ supplie.title }}</a>
                                             </h4>
-                                            {% if supplie.exist %}
-                                                <div class="price">
-                                                    <ul>
-                                                        {% if supplie.has_offer %}
-                                                            <ul class="discount"> تومان {{ supplie.orginal_price }}</ul>
-                                                            <ul> تومان {{ supplie.final_price }}</ul>
-                                                        {% else %}
-                                                            <ul> تومان {{ supplie.orginal_price }}</ul>
-                                                        {% endif %}
-                                                    </ul>
-                                                </div>
-                                            {% else %}
-                                                <div class="price">
-                                                    <ul>
-                                                        <li class="product_dosent_exist">موجود نمی باشد</li>
-                                                    </ul>
-                                                </div>
-                                            {% endif %}
+{#                                            {% if supplie.exist %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        {% if supplie.has_offer %}#}
+{#                                                            <ul class="discount"> تومان {{ supplie.orginal_price }}</ul>#}
+{#                                                            <ul> تومان {{ supplie.final_price }}</ul>#}
+{#                                                        {% else %}#}
+{#                                                            <ul> تومان {{ supplie.orginal_price }}</ul>#}
+{#                                                        {% endif %}#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% else %}#}
+{#                                                <div class="price">#}
+{#                                                    <ul>#}
+{#                                                        <li class="product_dosent_exist">موجود نمی باشد</li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            {% endif %}#}
 
                                         </div>
                                     </div>
@@ -394,19 +394,20 @@
                         <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
                             <div class="latest-caption">
                                 <h2 align="center" style="color: #2577fd">برای دریافت آخرین تخفیفات</h2>
-                                <h2 align="center" style="color:#2577fd">ایمیل خود را وارد کنید</h2>
-                                {% if has_email %}
-                                    <p>ایمیل شما با موفقیت ثبت شد</p>
-                                {% endif %}
+                                <h2 align="center" style="color:#2577fd">شماره تماس خود را وارد کنید</h2>
+{#                                {% if has_phone %}#}
+{#                                    <p>شماره با موفقیت ثبت شد</p>#}
+{#                                    {% else %}#}
+{#                                    <p>شماره به درستی وارد نشده است</p>#}
+{#                                {% endif %}#}
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-5 col-md-6 ">
                             <div class="latest-subscribe">
                                 <form method="post" action="{% url "shop:index" %}">
                                     {% csrf_token %}
-                                    <input style="direction: rtl; text-align: right; padding-right: 130px " type="email"
-                                           name="email" value="{{ request.Get.q }}"
-                                           placeholder="ایمیل خود را وارد کنید">
+                                    <input style="direction: rtl; text-align: right; padding-right: 130px " type="tel"
+                                           name="phone" value="{{ request.Get.q }}">
                                     <button style="font-size: large">ارسال</button>
                                 </form>
                             </div>

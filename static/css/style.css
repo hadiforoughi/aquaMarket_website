@@ -5022,6 +5022,7 @@ ul ul.discount {
 .gallery-wrapper .gallery-area .gallery-items {
     display: flex;
     width: 20%;
+    padding: 10px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -13238,6 +13239,19 @@ input:focus {
         position: relative;
     }
 }
+
+.about_text{
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
 
 
 /*# sourceMappingURL=style.css.map */

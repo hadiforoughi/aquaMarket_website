@@ -71,7 +71,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{% url "shop:index" %}" style="font-size: larger; text-align: right;">خانه</a>
-                                        <li dir="rtl" style="text-align: right;"><a href="#" style="font-size: larger;text-align: right; direction: rtl" dir="rtl">طبقه بندی</a>
+                                        <li dir="rtl" style="text-align: right;"><a href="#" style="font-size: larger;text-align: right; direction: rtl" dir="rtl">دسته بندی کالاها</a>
                                             <ul class="submenu">
                                                 <li><a href="{% url "shop:product_category" 'saltwater_fish' %}"
                                                        style="text-align: right;font-size: large; padding-right: 35px;"> ماهی آب شور</a></li>
@@ -83,7 +83,7 @@
                                                        style="text-align: right;font-size: large;padding-right: 35px;">غذا و تجهیزات</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#" style="font-size: larger;text-align: right; ">درباره ما</a>
+                                        <li><a href="{% url "shop:about" %}" style="font-size: larger;text-align: right; ">درباره ما</a>
                                         </li>
                                     </ul>
                                 </nav>

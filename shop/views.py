@@ -14,6 +14,9 @@ def phone_Valid(s):
     Pattern = re.compile("(0/91)?[0-9]{11}")
     return Pattern.match(s)
 
+def about(request):
+    return render(request,"shop/about.html")
+
 
 def index(request):
     products = Product.objects.all()

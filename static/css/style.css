@@ -13261,7 +13261,12 @@ input:focus {
 
 }
 
-
+.not_found_product{
+    direction: rtl;
+    text-align: right;
+    text-justify: auto;
+    padding: 5%;
+}
 
 
 

@@ -8,23 +8,6 @@
 
 
 
-    {#    <!-- slider Area Start-->#}
-    {#    <div class="slider-area ">#}
-    {#        <!-- Mobile Menu -->#}
-    {#        <div class="single-slider slider-height2 d-flex align-items-center"#}
-    {#             data-background="{% static "img/hero/category.jpg" %}">#}
-    {#            <div class="container">#}
-    {#                <div class="row">#}
-    {#                    <div class="col-xl-12">#}
-    {#                        <div class="hero-cap text-center">#}
-    {#                            <h2>product Details</h2>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </div>#}
-    {#    <!-- slider Area End-->#}
 
     <!--================Single Product Area =================-->
     <!-- mobile view -->
@@ -50,24 +33,6 @@
                         <p>
                             {{ object.description }}
                         </p>
-                        {% if object.exist %}
-                            <div class="price">
-                                <ul>
-                                    {% if object.has_offer %}
-                                        <ul class="discount"> تومان {{ object.orginal_price }}</ul>
-                                        <ul> تومان {{ object.final_price }}</ul>
-                                    {% else %}
-                                        <ul> تومان {{ object.orginal_price }}</ul>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        {% else %}
-                            <div class="price">
-                                <ul>
-                                    <li class="product_dosent_exist">موجود نمی باشد</li>
-                                </ul>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -97,24 +62,6 @@
                         <pre>
                             {{ object.description }}
                         </pre>
-                        {% if object.exist %}
-                            <div class="price">
-                                <ul>
-                                    {% if object.has_offer %}
-                                        <ul class="discount"> تومان {{ object.orginal_price }}</ul>
-                                        <ul> تومان {{ object.final_price }}</ul>
-                                    {% else %}
-                                        <ul> تومان {{ object.orginal_price }}</ul>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        {% else %}
-                            <div class="price">
-                                <ul>
-                                    <li class="product_dosent_exist">موجود نمی باشد</li>
-                                </ul>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -144,59 +91,13 @@
                         <pre>
                             {{ object.description }}
                         </pre>
-                        {% if object.exist %}
-                            <div class="price">
-                                <ul>
-                                    {% if object.has_offer %}
-                                        <ul class="discount"> تومان {{ object.orginal_price }}</ul>
-                                        <ul> تومان {{ object.final_price }}</ul>
-                                    {% else %}
-                                        <ul> تومان {{ object.orginal_price }}</ul>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        {% else %}
-                            <div class="price">
-                                <ul>
-                                    <li class="product_dosent_exist">موجود نمی باشد</li>
-                                </ul>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {#    <section class="panel">#}
-    {#				<h2>Recently Added</h2>#}
-    {#				<div class="recentslider">#}
-    {#					<div class="swiper-container">#}
-    {#						<div class="swiper-wrapper">#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="{% static "img/about_img_1.png" %}"><h3 class="hometitle">Space Betwen Us</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/2.jpg"><h3 class="hometitle">John Wick</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/3.jpg"><h3 class="hometitle">Spider-Man Homecoming</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/4.jpg"><h3 class="hometitle">Beauty and the Beast</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/5.jpg"><h3 class="hometitle">Pirates of the Caribbean: Dead Men Tell No Tales</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/6.jpg"><h3 class="hometitle">Fifty Shades Darker</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/7.jpg"><h3 class="hometitle">Transformers: The Last Knight</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/8.jpg"><h3 class="hometitle">xXx: Return of Xander Cage</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/9.jpg"><h3 class="hometitle">Space Betwen Us</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/2.jpg"><h3 class="hometitle">John Wick</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/3.jpg"><h3 class="hometitle">Spider-Man Homecoming</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/4.jpg"><h3 class="hometitle">Beauty and the Beast</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/5.jpg"><h3 class="hometitle">Pirates of the Caribbean: Dead Men Tell No Tales</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/6.jpg"><h3 class="hometitle">Fifty Shades Darker</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/7.jpg"><h3 class="hometitle">Transformers: The Last Knight</h3></a></div>#}
-    {#							<div class="swiper-slide"><a href="single.html"><img src="images/8.jpg"><h3 class="hometitle">xXx: Return of Xander Cage</h3></a></div>#}
-    {##}
-    {#							<div class="swiper-slide"><a href="mostwatched.html"><img src="img/others.png"></a></div>#}
-    {#						</div>#}
-    {#						<div class="nextdirection recent-next"><img src="img/right-arrow.svg"> </div>#}
-    {#						<div class="leftdirection recent-prev"><img src="img/left-arrow.svg"> </div>#}
-    {#					</div>#}
-    {#				</div>#}
-    {#			</section>#}
+
 
 
         <section class="related d-none d-sm-block" dir="rtl" style="color: red" >
@@ -211,47 +112,5 @@
         </section>
 
 
-
-{#    <section class="subscribe_part section_padding">#}
-{#        <div class="container">#}
-{#            <div class="row justify-content-center">#}
-{#                <div class="col-lg-8">#}
-{#                    <div class="related" dir="rtl">#}
-{#                        <h3 align="right">محصولات مرتبط</h3>#}
-{#                        {% for related in related_products %}#}
-{#                            <div align="right" class="relatemovie">#}
-{#                                <a href="{% url "shop:product_detail" related.slug %}"><img#}
-{#                                        src="{{ related.image.url }}"></a>#}
-{#                                <a href="{% url "shop:product_detail" related.slug %}"><span#}
-{#                                        class="relatedname align-right">{{ related.title }}</span></a>#}
-{#                            </div>#}
-{#                        {% endfor %}#}
-{##}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
-    {#    <!--================End Single Product Area =================-->#}
-    {#    <!-- subscribe part here -->#}
-    {#    <section class="subscribe_part section_padding">#}
-    {#        <div class="container">#}
-    {#            <div class="row justify-content-center">#}
-    {#                <div class="col-lg-8">#}
-    {#                    <div class="subscribe_part_content">#}
-    {#                        <h2>Get promotions & updates!</h2>#}
-    {#                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic”#}
-    {#                            sources credibly innovate granular internal .</p>#}
-    {#                        <div class="subscribe_form">#}
-    {#                            {% csrf_token %}#}
-    {#                            <input type="email" name="email" value="{{ request.Get.q }}" placeholder="Enter your mail">#}
-    {#                            <a href="#" class="btn_1">Subscribe</a>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </section>#}
-    {#    <!-- subscribe part end -->#}
 
 {% endblock %}

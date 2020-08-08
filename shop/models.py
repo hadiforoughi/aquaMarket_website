@@ -59,6 +59,14 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
+class ProductImage (models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    title = models.TextField(max_length=20)
+    image = models.ImageField(upload_to="shop/image_product")
+
+    def __str__(self):
+        return self.title + '   ('+self.product.title + ')'
+
 class Customer(models.Model):
     phone = models.CharField(max_length=11,default=00000000000)
 

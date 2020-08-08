@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from .models import Product, TYPE_CHOICES_VAL, Customer, Slider
+from .models import Product, TYPE_CHOICES_VAL, Customer, Slider , ProductImage
 import re
 
 # Create your views here.
@@ -28,9 +28,6 @@ def index(request):
     fresh_fish_list = products.filter(category='freshwater_fish').order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
     supplies_list = products.filter(category='supplies').order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
     offer_products_list = products.filter(has_offer=1).order_by('created_time')[0:INDEX_LASTPRODUCT_NUMBER]
-    slider = Slider.objects.all()
-    slider_size = str(len(slider))
-    has_phone = False
     if request.method == "POST":
         phone = request.POST.get('phone')
         if phone is not None:
@@ -45,10 +42,7 @@ def index(request):
                    'salt_fish_list': salt_fish_list,
                    'fresh_fish_list': fresh_fish_list,
                    'supplies_list': supplies_list,
-                   'offer_products_list': offer_products_list,
-                   # 'has_phone':has_phone,
-                   'sliders': slider,
-                   'slider_size': slider_size
+                   'offer_products_list': offer_products_list
                    })
 
 
@@ -113,15 +107,17 @@ class ProductDetails(DetailView):
 
     def get_queryset(self):
         self.slug = self.kwargs['slug']
-        product = Product.objects.filter(slug=self.slug)
-        return product
+        self.product = Product.objects.filter(slug=self.slug)
+        return self.product
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductDetails, self).get_context_data(**kwargs)
         related_products = Product.objects.filter(category=self.get_object().category).order_by('created_time')[
                            0:NUMBER_OF_RELATED_PRODUCT]
         related_list = list(related_products)
+        images = ProductImage.objects.filter(product=self.product[0])
         if self.get_object() in related_products:
             related_list.remove(self.get_object())
         context['related_products'] = related_list
+        context['images'] = images
         return context

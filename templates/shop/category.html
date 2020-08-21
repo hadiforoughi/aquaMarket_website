@@ -52,8 +52,9 @@
                                          style="text-align: right; padding-right: 50px;font-size: 120%">نوع<i
                                             class="right fas fa-caret-down"></i></div>
                                     <div class="select_option_dropdown" style="text-align: right; padding-right: 50px;">
-                                            <pre style="font-size: 120%"><a href="{% url "shop:product_category" 'food'%}">غذا</a></pre>
-                                            <pre style="font-size: 120%"><a href="{% url "shop:product_category" 'air_pump'%}">پمپ هوا</a></pre>
+                                        {% for key, val in types.items %}
+                                            <pre style="font-size: 120%"><a href="{% url "shop:product_category" key %}">{{ val }}</a></pre>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>

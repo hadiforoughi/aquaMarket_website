@@ -12,10 +12,24 @@ CATEGORY_CHOICES=(
     ("reef","ریف")
 )
 
-TYPE_CHOICES={
+TYPE_CHOICES=(
     ("food","غذا"),
     ("air_pump","پمپ هوا"),
-}
+    ("skimmer","اسکیمر"),
+    ("water_pump","واتر پمپ"),
+    ("wave_maker","موج ساز"),
+    ("medicine","دارو"),
+    ("complement","مکمل"),
+    ("aquarium","آکواریوم"),
+    ("filter","فیلتر"),
+    ("test","تست"),
+    ("light","نور"),
+    ("reactor","راکتور"),
+    ("media","مدیا"),
+    ("wood","چوب"),
+    ("heater","بخاری"),
+    ("other","سایر")
+)
 TYPE_CHOICES_VAL=["food","air_pump"]
 
 class Shop(models.Model):
@@ -52,8 +66,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         if self.slug is None:
-            string=self.title.replace(" ","_")
-            self.slug = string
+            self.slug = self.title.replace(" ","_")
         super(Product, self).save(*args, **kwargs)
 
     def __str__(self):

@@ -5,7 +5,7 @@ import re
 
 # Create your views here.
 
-INDEX_LASTPRODUCT_NUMBER = 2
+INDEX_LASTPRODUCT_NUMBER = 10
 NUMBER_OF_RELATED_PRODUCT = 3
 SEARCH_PAGINATE = 4
 CATEGORY_PAGINATE = 4
@@ -82,10 +82,10 @@ class ProductSearch(ListView):
     template_name = "shop/product_search.html"
 
     def get_queryset(self):
-        query = self.request.GET.get("Search")
+        self.search_key = self.request.GET.get("Search")
         self.queris = self.request.GET
-        if query:
-            self.product = Product.objects.filter(title__icontains=query)
+        if self.search_key:
+            self.product = Product.objects.filter(title__icontains=self.search_key)
             # check product exist
             try:
                 self.product[0]
@@ -106,6 +106,7 @@ class ProductSearch(ListView):
         else:
             context['full_path'] = self.request.get_full_path()
         context['not_found'] = self.not_found
+        context['search_key'] = self.search_key
         return context
 
 

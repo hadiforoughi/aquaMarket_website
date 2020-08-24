@@ -6682,9 +6682,16 @@ ul ul.discount {
 
 /* line 24, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_contact.scss */
 .contact-info .media-body h3 {
-    font-size: 16px;
+    /*font-size: 16px;*/
+    font-size: large;
     margin-bottom: 0;
-    font-size: 16px;
+    color: #2a2a2a;
+}
+
+.contact-info .media-body pre {
+    /*font-size: 16px;*/
+    font-size: large;
+    margin-bottom: 0;
     color: #2a2a2a;
 }
 

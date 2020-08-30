@@ -77,14 +77,15 @@ WSGI_APPLICATION = 'aquaMarket_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aquamarket',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd1ssesbofgbur6',
+        'USER': 'xpygpsrhehujuj',
+        'PASSWORD': 'af9941a7a70c6d9c7d29ae98a7bf4beacbc95756641556f6f496ab116bcc85fe',
+        'HOST': 'ec2-54-166-107-5.compute-1.amazonaws.com',
+        'PORT': 5432,
 
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -122,9 +123,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
 
 # Media files
 

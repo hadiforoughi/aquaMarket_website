@@ -24,9 +24,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'c54ismx!ntb1pbg9py3k^3yp2)=bmgjie9==o1ku#*+n5+z86v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0',]
+ALLOWED_HOSTS = ['0.0.0.0','https://aquamarket.herokuapp.com/','127.0.0.1']
 
 # Application definition
 

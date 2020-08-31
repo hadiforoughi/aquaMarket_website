@@ -59,7 +59,6 @@ class Product(models.Model):
     brand=models.CharField(max_length=100,blank=True)
     orginal_price=models.DecimalField(max_digits=10, decimal_places=2,blank=True)
     final_price=models.DecimalField(max_digits=10,decimal_places=2,blank=True)
-    rate=IntegerRangeField(min_value=0, max_value=5,blank=True,null=True)
     type=models.CharField(max_length=100,blank=True,choices=TYPE_CHOICES)
     has_offer=models.BooleanField()
     exist=models.BooleanField()
@@ -74,7 +73,7 @@ class Product(models.Model):
 
 class ProductImage (models.Model):
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
-    title = models.TextField(max_length=20)
+    title = models.TextField(max_length=20,blank=True)
     image = models.ImageField(upload_to="shop/image_product")
 
     def __str__(self):

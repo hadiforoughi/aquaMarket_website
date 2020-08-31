@@ -121,7 +121,11 @@ class ProductDetails(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductDetails, self).get_context_data(**kwargs)
-        related_products = Product.objects.filter(category=self.get_object().category).order_by('created_time')[
+        if self.get_object().category == "supplies":
+            related_products = Product.objects.filter(type = self.get_object().type).order_by('created_time')[
+                               0:NUMBER_OF_RELATED_PRODUCT]
+        else:
+            related_products = Product.objects.filter(category=self.get_object().category).order_by('created_time')[
                            0:NUMBER_OF_RELATED_PRODUCT]
         related_list = list(related_products)
         images = ProductImage.objects.filter(product=self.product[0])
